@@ -1,0 +1,24 @@
+<h1>View Article</h1>
+<%= link_to 'All Articles', articles_path %>
+<%= link_to 'Edit Article', edit_article_path %>
+<%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure' } %>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<% if @article.comments.size>0%>
+<h2> All Comments</h2>
+<%= render @article.comments%>
+<%end%>
+
+<h2>Add Comment</h2>
+<%= render 'comments/form'%>
+
+
+	

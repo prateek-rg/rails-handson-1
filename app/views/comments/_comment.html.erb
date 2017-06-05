@@ -1,0 +1,5 @@
+<div>
+    <strong>Commentor : </strong> <p><%= comment.commentor %></p> 
+    <strong>Comment : </strong> <p><%= comment.comment %></p> 
+    <%= link_to "Delete Comment", article_comment_path(comment.article, comment), method: :delete, data: {confirm: 'Are you sure'} %>
+</div>

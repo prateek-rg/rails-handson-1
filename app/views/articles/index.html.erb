@@ -1,0 +1,16 @@
+<h1> All Articles </h1>
+<%= link_to 'Create New', new_article_path %>
+<table>
+	<th>
+		<td>Title</td>
+		<td>Text</td>
+	</th>
+	<% @articles.each do |a| %>
+	<tr>
+		<td><%= a.title %></td>
+		<td><%= a.text %></td>
+		<td><%= link_to 'Show', article_path(a) %></td>
+		<td><%= link_to 'Edit', edit_article_path(a) %></td>
+		<td><%= link_to 'Delete', article_path(a), method: :delete, data:{confirm: 'Are you sure'} %></td>
+	</tr>
+	<% end %>
